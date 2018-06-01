@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The TOR Connector.</title>
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+	    <link href='https://fonts.googleapis.com/css?family=Chango' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Allerta' rel='stylesheet'>
+
+
+<style type="text/css">
+body {
+     background-color: #3B3131;
+     font-family: 'Allerta';
+}
+	div{
+  background-color: #3B3131;
+  color: #f0ffff ;
+}
+
+
+.gtext3 {
+          color: #3B3131;
+          text-shadow: 0px 1px 0px #3B3131;
+          font-size: 90%;
+         }
+
+.gtextbold {
+          color: #3B3131;
+          text-shadow: 0px 1px 0px #3B3131;
+          font-size: 96%;
+          font-weight: bold;
+         }
+ .gtextgold{
+          color: #EAC117;
+          text-shadow: 0px 1px 0px #EAC117;
+          font-size: 90%;
+         }
+
+.gtext {
+        color: #3B3131;
+        text-shadow: 0px 1px 0px #3B3131;
+        font-size: 100%;
+       }
+
+  .gtextblue {
+        color: #EAC117	;
+        text-shadow: 0px 1px 0px #3B3131;
+        font-size: 90%;
+       }
+
+
+</style>
+
+</head>
+<body>
+	<div class="container"  style="width:90%" >
+		<div class="text-center gtext3" style="color: #EAC117; font-family: 'Chango'">
+                                <h2> TOR Connector </h2> </div>
+		<div class="text-center gtext3" style="color: #f0ffff;"><h3>  Make it through TOR </h3> </div>
+		<ul class="nav nav-tabs" id="maintab">
+             <li><a href="#browse" data-toggle="tab" style="color: #EAC117;">Browse</a> </li>
+             <li><a href="#scan" data-toggle="tab" style="color: #EAC117;">Scan</a> </li>
+             <!--<li><a href="#iocsearch" data-toggle="tab">IOC Search</a> </li> -->
+        </ul> <!-- end of tab options ul-->
+        <div class="tab-content">
+        	<div class="tab-pane active" id="browse">
+        		<div class="container" style="width:90%" >
+        			<form  class="form-horizontal" action="/"  method="post">
+		                 <div class="form-group">
+		                 	<div class="row"><p></p></div>
+			                 	<div class="row">
+			        			<div class="col-sm-9">
+						                  		<!--label for="url" id="pnamelbl"> <span class="gtextblue">URL </span></label-->
+						                <input type="text" name="url" class="form-control" id="url"  placeholder="URL Please">
+					                </div>
+					                <div class="col-sm-3">
+								<button type="submit" class="btn btn-warning form-control">Connect TOR</button>
+							</div>
+					                  		
+					            </div>		        	
+		                 	</div>
+	             	</form>	               
+          		</div>
+          		<div class="container" style="width:100%;height: 100%;background-color: #f0ffff">
+                        <div class="row">
+                                <div class="col-sm-6" style="background-color: antiquewhite">
+                                        <!-- document.MyFrame.document.body.innerHTML = serverResponse-->
+                          <iframe id="torFrame" name="torFrame" src="javascript:void(0);" frameborder="0" style="position: relative; height: 850px; width: 100%"></iframe>
+                                    </div>
+                                <div class="col-sm-6">
+                                        <p id="phtml">{{.TorResponse}}</p>
+                                </div>
+                                
+                        </div>
+
+                      
+          			
+          		</div>
+          		
+
+        	</div> <!-- end of tab-pane browse div-->
+
+        	<div class="tab-pane" id="scan">
+        		<div class="container" style="width:70%" >
+                        <div class="container" style="width:90%" >
+                                <form  class="form-horizontal" action="/scan"  method="post">
+                                     <div class="form-group">
+                                         <div class="row"><p></p></div>
+                                             <div class="row">
+                                                        <div class="col-sm-9">
+                                                              <!--label for="url" id="pnamelbl"> <span class="gtextblue">URL </span></label-->
+                                                              <input type="text" name="target" class="form-control" id="target"  placeholder="Target Please">
+                                                          </div>
+                                                          <div class="col-sm-3">
+                                                               <button type="submit" class="btn btn-warning form-control">Start Scan</button>
+                                                        </div>
+                                                          
+                                            </div>		        	
+                                         </div>
+                                 </form>	               
+                              </div>
+          		</div>
+          		<div class="container" style="width:100%;height: 100%;">
+                        <div class="row ">
+                                       
+                                <div class="col-sm-12" >
+                                        <div class="panel panel-warning">
+                                                <div class="panel-heading">
+                                                  <h4 class="panel-title gtext">
+                                                        Scan Summary
+                                                  </h4>
+
+                                                </div>
+                                                <table class="table gtextbold"> 
+                                                                
+                                                   <tbody>
+                                                        <tr>
+                                                           <td><p>{{.HostName}}({{.Address}})</p></td>
+                                                                                
+                                                        </tr>
+                                                   </tbody>
+                                                </table>
+                                                   <table class="table"> 
+                                                                <thead class="gtext3">
+                                                                        <tr>                                                                               
+                                                                                <th>Port</th>
+                                                                                <th>Protocol</th>
+                                                                                <th>State</th>
+                                                                                <th>Reason</th>
+                                                                                <th>Service</th>
+                                                                                <th>Product</th>
+                                                                                <th>Version</th>
+                                                                                <th>Extra Info</th>
+                                                                                <th>Operating System</th>
+                                                                        </tr>
+                                                                </thead>   
+                                                   <tbody class="gtextgold">
+                                                        
+                                                       {{range .Ports}}
+                                                         <tr>
+                                                           <td><p>{{.PortID}}</p></td>
+                                                           <td><p> {{.Protocol}}</p></td>
+                                                           <td><p>{{.State}}</p></td>
+                                                           <td><p>{{.Reason}}</p></td>
+                                                           <td><p> {{.ServiceName}}</p> </td>
+                                                                 <td><p> {{.ProductName}}</p> </td>
+                                                                 <td><p> {{.ProductVersion}}</p> </td>
+                                                                 <td><p>{{.ExtraInfo}}</p></td>
+                                                                 <td><p>{{.OSType}}</p></td>
+                                                         </tr>
+                                                                                                                
+                                                       {{end}}
+                                                     </tbody>
+                                                   </table>
+                                               </div>       
+                                </div>
+                                
+                                
+                        </div>
+                       
+                       
+                    </div>
+
+        	</div> <!-- end of tab-pane scan div-->
+        </div>	
+    </div>   	
+	
+
+     
+
+     <script type="text/javascript">
+        $(document).ready(function(){
+            $('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
+                localStorage.setItem('activeTab', $(e.target).attr('href'));
+            });
+            var activeTab = localStorage.getItem('activeTab');
+           if(activeTab == '#browse'){
+               
+            $('#torFrame').contents().find('html').html($('#phtml').text())
+           }
+            if(activeTab){
+                $('#maintab a[href="' + activeTab + '"]').tab('show');
+            }
+        });
+	</script>
+</body>
+</html>
