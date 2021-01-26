@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <title>Anonym - Get connected to TOR</title>
+    <link rel="shortcut icon" href="/static/logo/logo.png">
+    <title>Anonym - A TOR Threat Intel and Scanning framework.</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="/static/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/style.css">
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
@@ -20,125 +20,198 @@
 </head>
 
 <body>
-
+    
     <div class="wrapper">
         <!-- Sidebar Holder -->
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3>Anonym</h3>
-            </div>
+        
 
-            <ul class="list-unstyled ">
-                    
-                  <li class="active">
-                    <a href="/">Scan</a>
-                  </li>
-                <li>
-                    <a href="/browse">Browse</a>
-                </li>
-            </ul>
-        </nav>
         <!-- Page Content Holder -->
         <div id="content">
-
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-
-                    <button type="button" id="sidebarCollapse" class="navbar-btn">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-align-justify"></i>
-                    </button>
-                    <div class="container gtextblk" style="width:35%"> <h4><span>Scan it through TOR</span></h4></div>
-                </div>
-            </nav>
-            <div class="row"><p></p></div>
-            <div class="container" style="width:60%" >
-                <form class="form-horizontal" action="" method="post">
-                  <div class="form-group">
-                      <div class="row">
-                          <div class="col-sm-9">
-                              <input type="text" name="target" class="form-control" id="target"  placeholder="      Target to Scan">
-
-                          </div> <!-- end of vt column div-->
-                          <div class="col-sm-3">
-                              <button type="submit" class="btn btn-primary form-control">Scan</button>
-  
-                              </div> <!-- end of additional file info  column div-->
-                        </div>
-                  </div>
-                </form>
-           </div>
-
-           <div class="container" style="width:100%;height: 100%;">
-                <div class="row ">
-                               
-                        <div class="col-sm-12" >
-                                <div class="panel panel-warning">
-                                        <div class="panel-heading">
-                                          <h4 class="panel-title gtext">
-                                                Scan Summary
-                                          </h4>
-
-                                        </div>
-                                        <table class="table gtextblk"> 
-                                                        
-                                           <tbody>
-                                                <tr>
-                                                   <td><p>{{.HostName}}({{.Address}})</p></td>
-                                                                        
-                                                </tr>
-                                           </tbody>
-                                        </table>
-                                           <table class="table"> 
-                                                        <thead class="gtext3">
-                                                                <tr>                                                                               
-                                                                        <th>Port</th>
-                                                                        <th>Protocol</th>
-                                                                        <th>State</th>
-                                                                        <th>Reason</th>
-                                                                        <th>Service</th>
-                                                                        <th>Product</th>
-                                                                        <th>Version</th>
-                                                                        <th>Extra Info</th>
-                                                                        <th>Operating System</th>
-                                                                </tr>
-                                                        </thead>   
-                                           <tbody class="gtextblk">
-                                                
-                                               {{range .Ports}}
-                                                 <tr>
-                                                   <td><p>{{.PortID}}</p></td>
-                                                   <td><p> {{.Protocol}}</p></td>
-                                                   <td><p>{{.State}}</p></td>
-                                                   <td><p>{{.Reason}}</p></td>
-                                                   <td><p> {{.ServiceName}}</p> </td>
-                                                         <td><p> {{.ProductName}}</p> </td>
-                                                         <td><p> {{.ProductVersion}}</p> </td>
-                                                         <td><p>{{.ExtraInfo}}</p></td>
-                                                         <td><p>{{.OSType}}</p></td>
-                                                 </tr>
-                                                                                                        
-                                               {{end}}
-                                             </tbody>
-                                           </table>
-                                       </div>       
-                        </div>
-                        
-                        
-                </div>
-               
-               
-            </div>
-                  
+          
+            <div class="row">
+                <div class="col-md-10">
+                    <div id="content">
+                    <p>
+                        <div class="container" style="width: 100%;">
+                        <h4><span style="font-size: xx-large;font-weight: bolder; color: #007bff;">Anonym</span></h4>
         
+                            <p style="text-align: justify;">A simple dark web threat intel and scanning framework.
+                               <div class="row">
+                                <div class="col-sm-3">
+                                  <ul class="list-unstyled components">
+                                    <div class="card bg-primary">  
+                                        <div style="margin-top:3px"></div>  
+                                        <div class="card-body text-left">
+                                          <div class="dropdown">                                        
+                                              <button type="button" class="btn btn-info btn-block" data-toggle="dropdown">
+                                                  Select</button>
+                                              <div class="dropdown-menu">
+                                                  <a  class="dropdown-item" data-toggle="modal" data-target="#darkwebintel">Dark Web Intel</a>
+                                                  <a  class="dropdown-item" data-toggle="modal" data-target="#scanner">Scan</a>
+                                              </div>
+                                            </div>
+                                        </div>
+                                      </div>
+                                </ul>                                
+                               </div>
+                            </div>
+                              <div class="panel panel-warning">
+                                      <div class="panel-heading">
+                                        <h4 class="panel-title gtext">
+                                              Scan Summary
+                                        </h4>
               
+                                      </div>
+                                      <table class="table"> 
+                                                      
+                                         <tbody>
+                                              <tr>
+                                                 <td><p>{{.HostName}}({{.Address}})</p></td>
+                                                                      
+                                              </tr>
+                                         </tbody>
+                                      </table>
+                                         <table class="table"> 
+                                                      <thead >
+                                                              <tr>                                                                               
+                                                                      <th>Port</th>
+                                                                      <th>Protocol</th>
+                                                                      <th>State</th>
+                                                                      <th>Reason</th>
+                                                                      <th>Service</th>
+                                                                      <th>Product</th>
+                                                                      <th>Version</th>
+                                                                      <th>Extra Info</th>
+                                                                      <th>Operating System</th>
+                                                              </tr>
+                                                      </thead>   
+                                         <tbody>
+                                              
+                                             {{range .Ports}}
+                                               <tr>
+                                                 <td><p>{{.PortID}}</p></td>
+                                                 <td><p> {{.Protocol}}</p></td>
+                                                 <td><p style="color:rgb(8, 235, 27);">{{.State}}</p></td>
+                                                 <td><p>{{.Reason}}</p></td>
+                                                 <td><p> {{.ServiceName}}</p> </td>
+                                                       <td><p> {{.ProductName}}</p> </td>
+                                                       <td><p> {{.ProductVersion}}</p> </td>
+                                                       <td><p>{{.ExtraInfo}}</p></td>
+                                                       <td><p>{{.OSType}}</p></td>
+                                               </tr>
+                                                                                                      
+                                             {{end}}
+                                           </tbody>
+                                         </table>
+                                     </div>       
+                                <!--a href="https://github.com/diljith369/Anonym" style="color: cyan;">GitHub</a-->
+                            </p>
+                        </div>
+                    </p>
+                    </div>
+                    </div>  
+                     
+            </div>
+
         </div>
     </div>
 
+ <!-- darkweb threat intel -->
+ <div class="modal fade" id="darkwebintel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">DarkWeb Threat Intelligence </h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>      
+        
+      <!-- Modal body -->
+      <div class="modal-body" >
+          <form action="" method="post">
+            <table class="table table-borderless .table-fixed">
+                <tbody>
+                    
+                    <tr>
+  
+                        <td >  
+                          <div class="col-sm-12">
+                          <label for="keyword" id="keywordlbl"> <span>Keyword </span></label>
+                          <input type="text" name="keyword" class="form-control" id="keyword"  placeholder="      Keyword">
+                        </div>
+                        </td>
+                        <input type="hidden" id="userchoice" name="userchoice" value="darkintel">
+  
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="col-sm-12">
+                              <button type="submit" class="btn btn-primary form-control">Get It</button>
+
+                            </div>
+  
+                        </td>   
+                    </tr>
+                  
+                </tbody>
+            </table>                                                                 
+          </form>
+      </div>
+  </div>
+</div>
+</div> <!--end dark web intel  modal-->
+<!-- scanner  -->
+<div class="modal fade" id="scanner">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Scan over TOR</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>      
+        
+      <!-- Modal body -->
+      <div class="modal-body" >
+          <form action="" method="post">
+            <table class="table table-borderless .table-fixed">
+                <tbody>
+                    
+                    <tr>
+  
+                        <td >  
+                          <div class="col-sm-12">
+                          <label for="target" id="targetlbl"> <span>Target </span></label>
+                          <input type="text" name="target" class="form-control" id="target"  placeholder="      Target to Scan">
+                        </div>
+                        </td>
+                        <input type="hidden" id="userchoice" name="userchoice" value="tscanner">
+  
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="col-sm-12">
+                              <button type="submit" class="btn btn-primary form-control">Start Scan</button>
+
+                            </div>
+  
+                        </td>   
+                    </tr>
+                  
+                </tbody>
+            </table>                                                                 
+          </form>
+      </div>
+  </div>
+</div>
+</div> <!--end scanner modal-->
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!-- Popper.JS -->
@@ -154,7 +227,6 @@
             });
         });
     </script>
-   
 </body>
 
 </html>

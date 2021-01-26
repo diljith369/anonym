@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="/static/logo/logo.png">
+    <title>Anonym - A TOR Threat Intel and Scanning framework.</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        
+
+        <!-- Page Content Holder -->
+        <div id="content">
+          
+            <div class="row">
+                <div class="col-md-10">
+                    <div id="content">
+                    <p>
+                        <div class="container" style="width: 100%;">
+                        <h4><span style="font-size: xx-large;font-weight: bolder; color: #007bff;">Anonym</span></h4>
+        
+                            <p style="text-align: justify;">A simple dark web threat intel and scanning framework.
+                               <div class="row">
+                                <div class="col-sm-3">
+                                  <ul class="list-unstyled components">
+                                    <div class="card bg-primary">  
+                                        <div style="margin-top:3px"></div>  
+                                        <div class="card-body text-left">
+                                          <div class="dropdown">                                        
+                                              <button type="button" class="btn btn-info btn-block" data-toggle="dropdown">
+                                                  Select</button>
+                                              <div class="dropdown-menu">
+                                                  <a  class="dropdown-item" data-toggle="modal" data-target="#darkwebintel">Dark Web Intel</a>
+                                                  <a  class="dropdown-item" data-toggle="modal" data-target="#scanner">Scan</a>
+                                              </div>
+                                            </div>
+                                            <div style="margin-top:2px"></div>
+                                        </div>
+                                      </div>
+                                      <div style="margin-top:12px"></div>
+                                </ul>                                 
+                              </div>
+                            </div>
+                                                   
+                                <!--a href="https://github.com/diljith369/Anonym" style="color: cyan;">GitHub</a-->
+                            </p>
+                        </div>
+                    </p>
+                    </div>
+                    </div>  
+                     
+            </div>
+        </div>
+    </div>
+
+ <!-- darkweb threat intel -->
+ <div class="modal fade" id="darkwebintel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">DarkWeb Threat Intelligence </h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>      
+        
+      <!-- Modal body -->
+      <div class="modal-body" >
+          <form action="" method="post">
+            <table class="table table-borderless .table-fixed">
+                <tbody>
+                    
+                    <tr>
+  
+                        <td >  
+                          <div class="col-sm-12">
+                          <label for="keyword" id="keywordlbl"> <span>Keyword </span></label>
+                          <input type="text" name="keyword" class="form-control" id="keyword"  placeholder="      Keyword">
+                        </div>
+                        </td>
+                        <input type="hidden" id="userchoice" name="userchoice" value="darkintel">
+  
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="col-sm-12">
+                              <button type="submit" class="btn btn-primary form-control">Get It</button>
+
+                            </div>
+  
+                        </td>   
+                    </tr>
+                  
+                </tbody>
+            </table>                                                                 
+          </form>
+      </div>
+  </div>
+</div>
+</div> <!--end dark web intel  modal-->
+<!-- scanner  -->
+<div class="modal fade" id="scanner">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Scan over TOR</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>      
+        
+      <!-- Modal body -->
+      <div class="modal-body" >
+          <form action="" method="post">
+            <table class="table table-borderless .table-fixed">
+                <tbody>
+                    
+                    <tr>
+  
+                        <td >  
+                          <div class="col-sm-12">
+                          <label for="target" id="targetlbl"> <span>Target </span></label>
+                          <input type="text" name="target" class="form-control" id="target"  placeholder="      Target to Scan">
+                        </div>
+                        </td>
+                        <input type="hidden" id="userchoice" name="userchoice" value="tscanner">
+  
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="col-sm-12">
+                              <button type="submit" class="btn btn-primary form-control">Scanner</button>
+
+                            </div>
+  
+                        </td>   
+                    </tr>
+                  
+                </tbody>
+            </table>                                                                 
+          </form>
+      </div>
+  </div>
+</div>
+</div> <!--end scanner modal-->
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

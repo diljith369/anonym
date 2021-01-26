@@ -1,10 +1,12 @@
-# anonym - Framework for making requests to web resouces through TOR and can be used to initiate port scanning using nmap through TOR . Helps to analyse phishing pages , it gives back HTML source code along with the UI and anonymous port scanning.
+## anonym - An easy to use framework for dark web threat intelligence and scanning.
 
-## Getting Started
+### Getting Started
 
-##### git clone https://github.com/diljithishere/anonym.git
-##### go get golang.org/x/net/proxy
+##### git clone https://github.com/diljith369/anonym.git
+##### go get github.com/gocolly/colly
+##### go get github.com/gocolly/colly/proxy
 ##### github.com/beevik/etree
+##### github.com/gorilla/mux
 
 ##### Make sure that TOR is running in your machine
 
@@ -18,9 +20,8 @@
 ##### apt-get install tor
 ##### servie tor start
 
-### Build exe 
-#### go build Connector.go 
-#### Run the exe 
+### Download binary files from corresponding OS folder 
+#### Run the anonym binary 
 #### On your favourite browser go to http://127.0.0.1:7777
 
 ### Prerequisites
@@ -31,4 +32,4 @@
 #### Go 
 
 ### Author
-#### * **Diljith S** - *Initial work* - (https://github.com/diljithishere)
+#### * **Diljith S** - *Initial work* - (https://github.com/diljith369)
